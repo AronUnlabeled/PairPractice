@@ -21,6 +21,13 @@ namespace PairPraactice
             Price = price;
         }
 
+        public Car()
+        {
+            Make = "";
+            Model = "";
+            Year = 0;
+            Price = 0m;
+        }
         public override string ToString()
         {
             return string.Format("{0,-10} {1,-15}{2,-20}{3,-25}", Make, Model, Year, Price);
