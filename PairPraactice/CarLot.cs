@@ -69,10 +69,89 @@ namespace PairPraactice
                 Console.WriteLine("you just bought " + bought.ToString());
                 CarList.RemoveAt(input);
             }
+            else if(input == 2)
+            {
+                string make;
+                string s;
+                string m;
+                double miles=0;
+                int years;
+                decimal price;
+
+                do
+                {
+                    Console.WriteLine("Is this a new or a used car? Type u or n.");
+                    s = Console.ReadLine();
+                    if(s == "u")
+                    {
+                        Console.WriteLine("Enter car miles.");
+                        miles = double.Parse(Console.ReadLine());
+                        break;
+                    }
+                    else if (s == "n")
+                    {
+                        break;
+                    }
 
 
 
+                } while (true);
 
+                    Console.WriteLine("What is the make of the car?");
+                    make = Console.ReadLine();
+
+                Console.WriteLine("What is the model of the car?");
+                m = Console.ReadLine();
+
+                do
+                {
+                    try
+                    {
+
+
+                        Console.WriteLine("enter car year");
+                        years = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Must enter a number.");
+                    }
+
+                } while (true);
+
+                do
+                {
+                    try
+                    {
+
+
+                        Console.WriteLine("enter car price");
+                        price = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Must enter a number.");
+                    }
+
+                } while (true);
+
+                if(s == "u")
+                {
+                    CarList.Add(new UsedCar(make, m, years, price, miles));
+                    
+                }
+                else
+                {
+                    CarList.Add(new Car(make, m, years, price));
+                }
+                DisplayCars();
+            }
+
+
+
+          
 
 
         }
