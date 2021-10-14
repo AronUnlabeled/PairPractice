@@ -13,11 +13,9 @@ namespace PairPraactice
                new UsedCar("Jeep", "Wrangler", 2016, 33998, 54000),
             };
 
+            CarLot ALot = new CarLot(CarList);
+            ALot.CarMenu();
 
-            foreach(Car m in CarList)
-            {
-                Console.WriteLine(m.ToString());
-            }
         }
     }
 }
